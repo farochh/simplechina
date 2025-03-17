@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ панель</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Админ панель</h1>
+        
+        <div class="form-section">
+            <h2>Добавить иероглифы</h2>
+            <input type="file" id="addFileInputHieroglyphs" accept=".json">
+            <button onclick="handleFileUpload('addHieroglyphs')">Отправить данные</button>
+        </div>
+
+        <div class="form-section">
+            <h2>Добавить переводы</h2>
+            <input type="file" id="addTranslationInput" accept=".json">
+            <button onclick="handleFileUpload('addTranslation')">Отправить данные</button>
+        </div>
+
+        <div class="form-section">
+            <h2>Удалить иероглифы</h2>
+            <input type="file" id="deleteFileInput" accept=".json">
+            <button onclick="handleFileUpload('deleteHieroglyphs')">Удалить данные</button>
+        </div>
+
+        <div class="form-section">
+            <h2>Удалить переводы</h2>
+            <input type="file" id="deleteTranslationInput" accept=".json">
+            <button onclick="handleFileUpload('deleteTranslation')">Удалить данные</button>
+        </div>
+
+       
+
+        <div id="statusMessage"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
